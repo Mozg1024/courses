@@ -1,0 +1,62 @@
+﻿<div ng-controller="CourseDetailsCtrl">
+
+    <form class="form-horizontal" role="form" ng-submit="formSubmit()" novalidate>
+
+        <div class="form-group">
+            <label for="title" class="col-xs-3 control-label">Title</label>
+            <div class="col-xs-9">
+                <input type="text" class="form-control bs-callout-default" id="title" name="title"  ng-model="course.title" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-xs-3 control-label" for="description">Description</label>
+            <div class="col-xs-9">
+                <textarea class="form-control bs-callout-default" id="description" name="description" ng-model="course.description"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-xs-3 control-label" for="date">Date</label>
+            <div class="col-xs-9">
+                <input type="text" class="form-control bs-callout-default" id="date" name="date" placeholder="dd.mm.yyyy" ng-model="course.date" ng-trim="false" ng-date />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-xs-3 control-label" for="length">Length</label>
+            <div class="col-xs-3">
+                <input type="number" class="form-control bs-callout-default" id="length" name="length" ng-model="course.length" />
+            </div>
+            <span ng-time-string="course.length"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="col-xs-3 control-label" for="allAuthors">Authors</label>
+
+            <div class="col-xs-3">
+                <select id="allAuthors" size="5" multiple class="nav-justified form-control bs-callout-default" name="allAuthors" ng-model="selectedPossibleAuthors"
+                        ng-options="author as author for author in allAuthors">
+                </select>
+            </div>
+
+            <div class="col-xs-1">
+                <button class="btn btn-block" ng-click="addCourseAuthors(selectedPossibleAuthors); $event.preventDefault();"><i class="glyphicon glyphicon-chevron-right"></i></button>
+                <button class="btn btn-block" ng-click="removeCourseAuthors(selectedCurrentAuthors); $event.preventDefault();"><i class="glyphicon glyphicon-chevron-left"></i></button>
+            </div>
+
+            <div class="col-xs-3">
+                <select id="courseAuthors" size="5" multiple class="nav-justified form-control bs-callout-default" name="courseAuthors" ng-model="selectedCurrentAuthors"
+                        ng-options="author as author for author in course.authors">
+                </select>
+            </div>
+        </div>
+
+        <div class="col-xs-9 col-xs-push-3">
+            <button class="btn btn-success" type="submit">Save</button>
+            <button class="btn btn-danger" ng-click="cancel()">Cancel</button>
+        </div>
+
+    </form>
+
+</div>

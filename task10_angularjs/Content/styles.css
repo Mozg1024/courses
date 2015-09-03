@@ -1,0 +1,93 @@
+﻿body {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+.text-ellipsis {
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.text-indent {
+    text-indent: 20px;
+}
+
+.left-inner-addon {
+    position: relative;
+}
+
+.left-inner-addon input {
+    padding-left: 30px;
+}
+
+.left-inner-addon i {
+    position: absolute;
+    padding: 10px 12px;
+    pointer-events: none;
+}
+
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #cccccc;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.bs-callout+.bs-callout {
+    margin-top: -5px;
+}
+
+.bs-callout-default {
+    border-left-width: 5px;
+    border-left-color: #bbbbbb;
+}
+
+.std-padding {
+    padding: 20px;
+}
+
+.navbar-text-less-margin {
+    margin: 3px 0;
+}
+
+.nav .breadcrumb {
+    float: left;
+    margin: 7px;
+    background-color: inherit;
+}
+
+.breadcrumb-chevron > li + li:before {
+    content: "\00a0>\00a0";
+}
+
+a.disabled {
+    color: #AAAAAA !important; /*IE hack*/
+    cursor: text;
+    text-decoration: none;
+}
+
+a.disabled:hover, a.disabled:focus {
+    cursor: text;
+    text-decoration: none;
+}
+
+
+
+
+
+
+/*.enter {
+    position: absolute;
+    left: 100%;
+    z-index: 1000;
+    padding-top: 8px;
+    white-space: nowrap;
+}*/

@@ -1,0 +1,42 @@
+﻿<div class="row" ng-controller="LoginCtrl">
+
+    <div class="alert alert-danger" role="alert" ng-show="!isLoginValid">
+        Unknown username or password
+    </div>
+
+    <form name="loginForm" ng-submit="formSubmit()" role="form" novalidate>
+
+        <div class="row">
+            <div class="form-group left-inner-addon col-xs-6 col-xs-push-3" ng-class="validUsername ? '' : 'has-error'">
+                <i class="glyphicon glyphicon-user"></i>
+                <input id="username" type="text" class="form-control" name="username" placeholder="Username" title="admin" ng-model="username" ng-pattern="/^[A-Z]+$/i" required />
+            </div>
+
+            <div ng-messages="loginForm.username.$error" class="has-error col-xs-3 col-xs-push-3" role="alert">
+                <span ng-message="required pattern" class="help-block">* enter</span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group left-inner-addon col-xs-6 col-xs-push-3" ng-class="validPassword ? '' : 'has-error'">
+                <i class="glyphicon glyphicon-lock"></i>
+                <input id="password" type="password" class="form-control" name="password" placeholder="Password" title="admin" ng-model="password" ng-pattern="/^[A-Z0-9]+$/i" required />
+            </div>
+
+            <div ng-messages="loginForm.password.$error" class="has-error col-xs-3 col-xs-push-3" role="alert">
+                <span ng-message="required pattern" class="help-block">* enter</span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6 col-xs-push-3">
+                <button type="submit" class="form-group btn btn-default" ng-disabled="isLoginButtonDisabled()">
+                    <i class="glyphicon glyphicon-cloud"></i>
+                    Log in
+                </button>
+            </div>
+        </div>
+
+    </form>
+
+</div>

@@ -1,0 +1,6 @@
+D:\Visual Studio 2013\Projects\5\tags\WEB\task10_angularjs\task10_angularjs\bin\task10_angularjs.dll.config
+D:\Visual Studio 2013\Projects\5\tags\WEB\task10_angularjs\task10_angularjs\bin\task10_angularjs.dll
+D:\Visual Studio 2013\Projects\5\tags\WEB\task10_angularjs\task10_angularjs\bin\task10_angularjs.pdb
+D:\Visual Studio 2013\Projects\5\tags\WEB\task10_angularjs\task10_angularjs\obj\Debug\task10_angularjs.csprojResolveAssemblyReference.cache
+D:\Visual Studio 2013\Projects\5\tags\WEB\task10_angularjs\task10_angularjs\obj\Debug\task10_angularjs.dll
+D:\Visual Studio 2013\Projects\5\tags\WEB\task10_angularjs\task10_angularjs\obj\Debug\task10_angularjs.pdb

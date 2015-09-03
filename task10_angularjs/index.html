@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="APP">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="Content/images/logo_small.png" type="image/png" />
+    <title>mega-SPA-site</title>
+
+    <link href="Content/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap/bootstrap-theme.css" rel="stylesheet" />
+    <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
+    <link href="Content/styles.css" rel="stylesheet" />
+
+</head>
+
+<body role="document">
+
+    <header class="navbar navbar-inverse navbar-fixed-top" ng-controller="mainCtrl">
+        <div class="container">
+
+            <div class="pull-right">
+                <div class="navbar-text navbar-text-less-margin">
+                    {{userLogin()}}
+                </div>
+                <div>
+                    <a href="/#/login" class="navbar-link" ng-click="logoff()">{{userLogin() ? "logoff" : "login"}}</a>
+                </div>
+            </div>
+
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/#/" class="navbar-brand">
+                        <i class="glyphicon glyphicon-home"></i>
+                        Logo
+                    </a>
+                </li>
+                <li>
+                    <ul class="breadcrumb breadcrumb-chevron">
+                        <li ng-repeat="crumb in $root.breadcrumbs">
+                            <a ng-href="{{checkDisableHref(crumb)}}" class="navbar-link" ng-class="checkDisableClass(crumb)" ng-bind="crumb.label"></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </header>
+
+    <main class="container" role="main">
+        <div ng-view></div>
+    </main>
+
+    <footer class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="/#/" class="navbar-brand">&copy; 2015</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--Libs-->
+
+    <script src="Scripts/jquery/jquery-1.9.1.js"></script>
+    <script src="Scripts/bootstrap/bootstrap.js"></script>
+
+    <script src="Scripts/angular/angular.js"></script>
+    <script src="Scripts/angular/angular-messages.js"></script>
+    <script src="Scripts/angular/angular-route.js"></script>
+    <script src="Scripts/angular/angular-resource.js"></script>
+    <script src="Scripts/angular/angular-mocks.js"></script>
+
+    <script src="Scripts/angular-ui/ui-bootstrap.js"></script>
+    <script src="Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
+
+
+    <!--My scripts-->
+
+    <script src="Scripts/app/init.js"></script>
+
+    <script src="Scripts/app/backend/login.js"></script>
+    <script src="Scripts/app/backend/courses.js"></script>
+    
+    <script src="Scripts/app/shared/helpers.js"></script>
+    <script src="Scripts/app/shared/directives/ngDate.js"></script>
+    <script src="Scripts/app/shared/directives/ngTimeString.js"></script>
+    <script src="Scripts/app/shared/filters/minutesToTimeString.js"></script>
+
+    <script src="Scripts/app/header/controllers/mainCtrl.js"></script>
+
+    <script src="Scripts/app/login/controllers/loginCtrl.js"></script>
+    <script src="Scripts/app/login/factories/userLogin.js"></script>
+
+    <script src="Scripts/app/courses/controllers/coursesCtrl.js"></script>
+    <script src="Scripts/app/courses/controllers/modalDeleteCtrl.js"></script>
+    <script src="Scripts/app/courses/services/courses.js"></script>
+
+    <script src="Scripts/app/courseDetails/controllers/courseDetailsCtrl.js"></script>
+
+</body>
+
+</html>
